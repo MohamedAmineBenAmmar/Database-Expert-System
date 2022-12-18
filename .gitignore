@@ -315,4 +315,5 @@ cython_debug/
 
 # Support for Project snippet scope
 __pycache__/
+node_modules/
 # End of https://www.toptal.com/developers/gitignore/api/python,pythonvanilla,visualstudiocode,pydev,pycharm
