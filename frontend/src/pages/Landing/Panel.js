@@ -18,9 +18,9 @@ export default function Panel() {
             Artificial Intelligence
           </div>
           <p className="mt-0 mb-4 text-700 line-height-3">
-            This project is going to demonstrate the processes communication
-            using sockets with the TCP and UDP protocoles and the communication
-            with named pipes.
+            This project is going to demonstrate the process of suggesting the
+            best database that suits a user based on the constraints that he is
+            going to mention
           </p>
           <Button
             label="Live Demo"

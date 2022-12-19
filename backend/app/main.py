@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from database_expert_system import DatabaseExpertSystem, db_facts
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
@@ -29,6 +30,20 @@ def read_item(constraints: dict):
     print(db_expert_sys.suggestions)
         
     return db_expert_sys.suggestions
+
+# Configuring CORSMiddleware
+origins = [
+    "http://localhost:3000",
+    "localhost:3000"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 if __name__ == '__main__':
     uvicorn.run(app, port=8000, host="0.0.0.0")

@@ -49,7 +49,13 @@ export default function DatabaseExpertSystem() {
     }
   };
 
+  const handleConstraints = (e) => {
+    setConstraints({...constraints, [e.target.id]: !e.target.value})
+  }
+
   const handleTabChange = (e) => {
+    console.log("the index")
+    console.log(e.index)
     if (e.index === 0) {
       setConstraints({
         HighAvailability: false,
@@ -112,15 +118,15 @@ export default function DatabaseExpertSystem() {
           header="Project Constraints"
           headerTemplate={projectConstraintsTabHeader}
         >
-          <Constraints />
+          <Constraints handleSuggestions={handleSuggestions} handleConstraints={handleConstraints} constraints={constraints} />
         </TabPanel>
         <TabPanel
           header="Suggestions"
           headerTemplate={suggestionsTabHeader}
           headerClassName="ml-1 "
-          // disabled={suggestions === null && true}
+          disabled={suggestions === null && true}
         >
-          <Suggestions />
+          <Suggestions suggestions={suggestions} />
         </TabPanel>
       </TabView>
     </div>

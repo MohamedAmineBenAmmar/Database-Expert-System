@@ -1,18 +1,8 @@
-# Check the version of cdocker
-
+# Check the version of docker
 docker version
+
 # Building the image
-docker build -t python-imdb . 
+docker build -t database-expert-system .
 
 # Starting our container
-docker run -t -i python-imdb
-
-
-# advanced example
-docker build -t database-expert-system .
-docker run -p 8000:8000 database-expert-system
-
-
-# off
-docker build -t database-expert-system .
 docker run -p 8000:8000 database-expert-system

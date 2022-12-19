@@ -1,87 +1,48 @@
 import React from "react";
 import { Chip } from "primereact/chip";
-import { Button } from "primereact/button";
+import { Message } from "primereact/message";
+import capitalize from "../../utils/capitalize";
 
-export default function Suggestions() {
+export default function Suggestions({ suggestions }) {
+  const displaySuggestions = suggestions.map((suggestion) => (
+    <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
+      <div className="text-500 w-6 md:w-2 font-medium">
+        {capitalize(suggestion.characteristics)}
+      </div>
+      <div className="text-900 w-full md:w-5 md:flex-order-0 flex-order-1">
+        {suggestion.recommendations.map((recommendation) => (
+          <Chip label={recommendation} className="mr-2" />
+        ))}
+      </div>
+      <div className="md:w-5 flex justify-content-end">
+        {suggestion.requirements.map((requirement) => (
+          <>
+            <p className="w-full">{requirement}</p>
+            <br />
+          </>
+        ))}
+      </div>
+    </li>
+  ));
+
   return (
     <div className="surface-0 p-4">
       <div className="font-medium text-3xl text-900 mb-3">
         Suggested databases for your project
       </div>
       <div className="text-500 mb-5">
-        Morbi tristique blandit turpis. In viverra ligula id nulla hendrerit
-        rutrum.
+        Our system may suggest multiple databases. The system will propose
+        databases that suits your needs. In a case of a complex project a mix
+        between databases in a distibuted environment is a must.
       </div>
-      <ul className="list-none p-0 m-0">
-        <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
-          <div className="text-500 w-6 md:w-2 font-medium">Title</div>
-          <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
-            Heat
-          </div>
-          <div className="w-6 md:w-2 flex justify-content-end">
-            <Button
-              label="Edit"
-              icon="pi pi-pencil"
-              className="p-button-text"
-            />
-          </div>
-        </li>
-        <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
-          <div className="text-500 w-6 md:w-2 font-medium">Genre</div>
-          <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
-            <Chip label="Crime" className="mr-2" />
-            <Chip label="Drama" className="mr-2" />
-            <Chip label="Thriller" />
-          </div>
-          <div className="w-6 md:w-2 flex justify-content-end">
-            <Button
-              label="Edit"
-              icon="pi pi-pencil"
-              className="p-button-text"
-            />
-          </div>
-        </li>
-        <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
-          <div className="text-500 w-6 md:w-2 font-medium">Director</div>
-          <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
-            Michael Mann
-          </div>
-          <div className="w-6 md:w-2 flex justify-content-end">
-            <Button
-              label="Edit"
-              icon="pi pi-pencil"
-              className="p-button-text"
-            />
-          </div>
-        </li>
-        <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
-          <div className="text-500 w-6 md:w-2 font-medium">Actors</div>
-          <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">
-            Robert De Niro, Al Pacino
-          </div>
-          <div className="w-6 md:w-2 flex justify-content-end">
-            <Button
-              label="Edit"
-              icon="pi pi-pencil"
-              className="p-button-text"
-            />
-          </div>
-        </li>
-        <li className="flex align-items-center py-3 px-2 border-top-1 border-bottom-1 border-300 flex-wrap">
-          <div className="text-500 w-6 md:w-2 font-medium">Plot</div>
-          <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1 line-height-3">
-            A group of professional bank robbers start to feel the heat from
-            police when they unknowingly leave a clue at their latest heist.
-          </div>
-          <div className="w-6 md:w-2 flex justify-content-end">
-            <Button
-              label="Edit"
-              icon="pi pi-pencil"
-              className="p-button-text"
-            />
-          </div>
-        </li>
+      {suggestions.length === 0 ? (
+        <Message className="w-full" severity="warn" text="There is no recommendations based on the constraints specified earlier" />
+      ) : (
+        <ul className="list-none p-0 m-0">       
+        {displaySuggestions}
       </ul>
+      )}
+      
     </div>
   );
 }

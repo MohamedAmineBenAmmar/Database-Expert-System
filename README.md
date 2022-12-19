@@ -1,4 +1,3 @@
- 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -133,9 +132,11 @@ You can do this by running the following command:
 </div>
 
 <!-- GETTING STARTED -->
+
 ```console
 pip install experta
 ```
+
 <hr>
 
 Check the `database_expert.py` for the implementation

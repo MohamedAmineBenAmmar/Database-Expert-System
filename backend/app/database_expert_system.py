@@ -196,7 +196,7 @@ class DatabaseExpertSystem(KnowledgeEngine):
         print("Recommend a database with real-time analytics capabilities such as Google Cloud BigQuery or Amazon Redshift")
         self.suggestions.append({
             "recommendations": ["Google Cloud BigQuery", "Amazon Redshift"],
-            "characteristics": "full text search database",
+            "characteristics": "real rime analytics",
             "requirements": ["Real-time analytics capabilities"]
         })
 

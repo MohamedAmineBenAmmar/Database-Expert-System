@@ -8,7 +8,8 @@ export default function Features() {
         <span className="text-blue-600">of Computer Science</span>
       </div>
       <div className="text-700 text-sm mb-6">
-        Developed by Mohamed Amine Ben Ammar and Yassine Ksibi (Softwate Engineer Students)
+        Developed by Mohamed Amine Ben Ammar and Yassine Ksibi (Softwate
+        Engineer Students)
       </div>
       <div className="grid">
         <div className="col-12 md:col-3 mb-4 px-5">
@@ -18,10 +19,10 @@ export default function Features() {
           >
             <i className="pi pi-globe text-4xl text-blue-500"></i>
           </span>
-          <div className="text-900 mb-3 font-medium">Communication</div>
+          <div className="text-900 mb-3 font-medium">UI / UX</div>
           <span className="text-700 text-sm line-height-3">
-            The application supports a variety of communication mechanisms such
-            as TCP, UDP and Named Pipes.
+            Our application offers great user experience through an ergonomic
+            and easy to use interface
           </span>
         </div>
         <div className="col-12 md:col-3 mb-4 px-5">
@@ -46,7 +47,7 @@ export default function Features() {
           </span>
           <div className="text-900 mb-3 font-medium">Performance</div>
           <span className="text-700 text-sm line-height-3">
-            the application uses the latest technologies to ensure high speed
+            The application uses the latest technologies to ensure high speed
             and reliability.{" "}
           </span>
         </div>
@@ -59,9 +60,8 @@ export default function Features() {
           </span>
           <div className="text-900 mb-3 font-medium">Learn</div>
           <span className="text-700 text-sm line-height-3">
-            this application is great for learning to develop in a unix
-            environment. You will discover a lot of new techniques and
-            mechanisms that will help to hone your skills.
+            This application is great for learning to develop an expert system .
+            This project is good starting point for whom wants to learn AI
           </span>
         </div>
       </div>
