@@ -128,15 +128,14 @@ If the project requires support for geospatial data and complex querying capabil
 Now that we have defined the facts and rules for our expert system, let's implement it using the experta library in Python.
 First, we will need to install the experta library. 
 You can do this by running the following command:
+ <br>
+  <br>
 </div>
-<div>
+
+<!-- GETTING STARTED -->
 ```console
 pip install experta
 ```
-</div>
 <hr>
-<div>
-  <strong>
-Check the database_expert.py for the implementation
-  </strong>
-</div>
+
+Check the `database_expert.py` for the implementation
